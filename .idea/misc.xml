@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidProject/SchoolProject-master2/app/src/main/res/layout/activity_feedback_result.xml" value="0.16197916666666667" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/drawable/more.xml" value="0.1609375" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/drawable/tab_background.xml" value="0.184375" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/acitivity_exercise_menu.xml" value="0.14479166666666668" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/activity_exercise.xml" value="0.11822916666666666" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/activity_feedback_result.xml" value="0.15" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/activity_feedbackpage.xml" value="0.16822916666666668" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/activity_feedbackpage_item.xml" value="0.16822916666666668" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/activity_login.xml" value="0.14479166666666668" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/activity_signup.xml" value="0.14479166666666668" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/appbar.xml" value="0.1640625" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/feedbackpage_listview.xml" value="0.264" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/fragment_calendar.xml" value="0.14479166666666668" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/fragment_exercise.xml" value="0.14479166666666668" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/fragment_exercise_listview.xml" value="0.15" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/fragment_exercise_setting.xml" value="0.2" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/fragment_feedback_setting.xml" value="0.176" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/fragment_goal.xml" value="0.264" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/fragment_goal_listview.xml" value="0.176" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/fragment_goal_setting.xml" value="0.14479166666666668" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/header.xml" value="0.1640625" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/layout/home_calendarcell.xml" value="0.2441123188405797" />
+        <entry key="..\:/AndroidProject/SchoolProject-master3/app/src/main/res/menu/menu_list.xml" value="0.176" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/drawable-v24/ic_baseline_dehaze_24.xml" value="0.2425" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/drawable/ic_baseline_dehaze_24.xml" value="0.2425" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/activity_exercise.xml" value="0.1824074074074074" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/activity_feedback_result.xml" value="0.1824074074074074" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/activity_main.xml" value="0.1824074074074074" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/activity_signup.xml" value="0.25882352941176473" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/appbar.xml" value="0.29981884057971014" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/fragment_calendar.xml" value="0.1824074074074074" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/fragment_exercise.xml" value="0.1824074074074074" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/fragment_exercise_listview.xml" value="0.1824074074074074" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/fragment_feedback_setting.xml" value="0.22" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/fragment_goal.xml" value="0.29981884057971014" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/fragment_goal_listview.xml" value="0.29981884057971014" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/fragment_goal_setting.xml" value="0.29981884057971014" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/fragment_home.xml" value="0.1824074074074074" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/layout/header.xml" value="0.29981884057971014" />
+        <entry key="..\:/AndroidStudio/SchoolProject-master3/app/src/main/res/menu/menu_list.xml" value="0.3927083333333333" />
+        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/drawable-v24/textview_stroke.xml" value="0.4305555555555556" />
+        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/drawable/textview_stroke.xml" value="0.22314814814814815" />
+        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/acitivity_exercise_menu.xml" value="0.25329280648429586" />
+        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/activity_exercise.xml" value="0.20652173913043478" />
+        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/activity_feedback_result.xml" value="0.47604166666666664" />
+        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/activity_main.xml" value="0.25329280648429586" />
+        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/fragment_calendar.xml" value="0.5652173913043478" />
+        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/fragment_exercise.xml" value="0.23324275362318841" />
+        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/fragment_exercise_listview.xml" value="0.23324275362318841" />
+        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/fragment_exercise_setting.xml" value="0.23324275362318841" />
+        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/fragment_goal.xml" value="0.5652173913043478" />
+        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="설정"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30sp">
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/fbs_llayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/fbs_ltv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="왼발"
+            android:textSize="20sp"/>
+        <Switch
+            android:id="@+id/fbs_msw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/fbs_rtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오른발"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/fbs_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="운동 시작하기"
+        android:textSize="20sp"
+        android:layout_margin="10dp">
+    </Button>
+</LinearLayout>
