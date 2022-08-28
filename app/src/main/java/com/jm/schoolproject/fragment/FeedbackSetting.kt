@@ -32,16 +32,23 @@ class FeedbackSetting : Activity() {
         switchRight = findViewById(R.id.fbs_rtv)
 
         btn = findViewById(R.id.fbs_btn)
-        
-        if (id == 4) {
+
+        if (id == 2) {
+            switchLeft.text = "왼쪽 다리"
+            switchRight.text = "오른쪽 다리"
+        }
+        else if (id == 4) {
             switchLeft.text = "왼손"
             switchRight.text = "오른손"
-        } else if (id == 6) {
+        } else if (id == 6 || id == 11) {
             switchLeft.text = "왼쪽 측면"
             switchRight.text = "오른쪽 측면"
+        } else if (id == 9) {
+            switchLeft.text = "왼쪽 다리"
+            switchRight.text = "오른쪽 다리"
         }
 
-        if (id != 2 && id != 4 && id != 6) {
+        if (id != 2 && id != 4 && id != 6 && id != 9 && id != 11) {
             val intent = Intent(this, FeedbackActivity::class.java)
             intent.putExtra("id", id)
             startActivity(intent)
@@ -51,11 +58,12 @@ class FeedbackSetting : Activity() {
         btn.setOnClickListener {
             val intent = Intent(this, FeedbackActivity::class.java)
 
-            if (id == 2 || id == 4 || id == 6) {
+            if (id == 2 || id == 4 || id == 6 || id == 9 || id==11) {
                 var switch = 0
                 if(switchMedium.isChecked) switch = 1
                 id += switch
             }
+
             intent.putExtra("id", id)
             startActivity(intent)
             finish()

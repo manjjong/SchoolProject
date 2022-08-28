@@ -48,7 +48,7 @@ abstract class PoseMatcher {
 
             val angle = calculateAngle(firstLandmark!!, middleLandmark!!, lastLandmark!!)
             val targetAngle = target.angle
-
+            Log.d("pose", "${translate(firstLandmark!!.landmarkType)}, ${translate(middleLandmark!!.landmarkType)}, ${translate(lastLandmark!!.landmarkType)}")
             Log.d("pose", "angle : $angle -> target : $targetAngle")
 
             if (abs(angle - targetAngle) > offset) {
@@ -110,5 +110,49 @@ abstract class PoseMatcher {
 
     open fun anglesMatch(angle: Double, targetAngle: Double): Boolean {
         return angle < targetAngle + offset && angle > targetAngle - offset
+    }
+
+    companion object {
+        val LEFT_STATE = 0
+        val RIGHT_STATE = 1
+
+        fun translate(pose: Int) : String {
+            when (pose) {
+                PoseLandmark.NOSE -> return "NOSE"
+                PoseLandmark.LEFT_EYE_INNER -> return "LEFT_EYE_INNER"
+                PoseLandmark.LEFT_EYE -> return "LEFT_EYE"
+                PoseLandmark.LEFT_EYE_OUTER -> return "LEFT_EYE_OUTER"
+                PoseLandmark.RIGHT_EYE_INNER -> return "RIGHT_EYE_INNER"
+                PoseLandmark.RIGHT_EYE -> return "RIGHT_EYE"
+                PoseLandmark.RIGHT_EYE_OUTER -> return "RIGHT_EYE_OUTER"
+                PoseLandmark.LEFT_EAR -> return "LEFT_EAR"
+                PoseLandmark.RIGHT_EAR -> return "RIGHT_EAR"
+                PoseLandmark.LEFT_MOUTH -> return "LEFT_MOUTH"
+                PoseLandmark.RIGHT_MOUTH -> return "RIGHT_MOUTH"
+                PoseLandmark.LEFT_SHOULDER -> return "LEFT_SHOULDER"
+                PoseLandmark.RIGHT_SHOULDER -> return "RIGHT_SHOULDER"
+                PoseLandmark.LEFT_ELBOW -> return "LEFT_ELBOW"
+                PoseLandmark.RIGHT_ELBOW -> return "RIGHT_ELBOW"
+                PoseLandmark.LEFT_WRIST -> return "LEFT_WRIST"
+                PoseLandmark.RIGHT_WRIST -> return "RIGHT_WRIST"
+                PoseLandmark.LEFT_PINKY -> return "LEFT_PINKY"
+                PoseLandmark.RIGHT_PINKY -> return "RIGHT_PINKY"
+                PoseLandmark.LEFT_INDEX-> return "LEFT_INDEX"
+                PoseLandmark.RIGHT_INDEX -> return "RIGHT_INDEX"
+                PoseLandmark.LEFT_THUMB -> return "LEFT_THUMB"
+                PoseLandmark.RIGHT_THUMB -> return "RIGHT_THUMB"
+                PoseLandmark.LEFT_HIP -> return "LEFT_HIP"
+                PoseLandmark.RIGHT_HIP -> return "RIGHT_HIP"
+                PoseLandmark.LEFT_KNEE -> return "LEFT_KNEE"
+                PoseLandmark.RIGHT_KNEE -> return "RIGHT_KNEE"
+                PoseLandmark.LEFT_ANKLE -> return "LEFT_ANKLE"
+                PoseLandmark.RIGHT_ANKLE -> return "RIGHT_ANKLE"
+                PoseLandmark.LEFT_HEEL -> return "LEFT_HEEL"
+                PoseLandmark.RIGHT_HEEL -> return "RIGHT_HEEL"
+                PoseLandmark.LEFT_FOOT_INDEX -> return "LEFT_FOOT_INDEX"
+                PoseLandmark.RIGHT_FOOT_INDEX -> return "RIGHT_FOOT_INDEX"
+            }
+            return ""
+        }
     }
 }

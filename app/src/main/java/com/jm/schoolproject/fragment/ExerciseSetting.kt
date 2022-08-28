@@ -39,16 +39,24 @@ class ExerciseSetting : Activity() {
         switchMedium = findViewById(R.id.switchMedium)
         switchRight = findViewById(R.id.switchRight)
 
-        if (id == 2 || id == 4 || id == 6) {
+        if (id == 2 || id == 4 || id == 6 || id == 9 || id == 11) {
             switchLayout.visibility = View.VISIBLE
         }
 
-        if (id == 4) {
+        if (id == 2) {
+            switchLeft.text = "왼쪽 다리"
+            switchRight.text = "오른쪽 다리"
+        }
+        else if (id == 4) {
             switchLeft.text = "왼손"
             switchRight.text = "오른손"
-        } else if (id == 6) {
+        } else if (id == 6 || id == 11) {
             switchLeft.text = "왼쪽 측면"
             switchRight.text = "오른쪽 측면"
+        }
+        else if (id == 9) {
+            switchLeft.text = "왼쪽 다리"
+            switchRight.text = "오른쪽 다리"
         }
 
         btnMinus.setOnClickListener {
@@ -64,7 +72,7 @@ class ExerciseSetting : Activity() {
         btnStart.setOnClickListener {
             val intent = Intent(this, ExerciseActivity::class.java)
             intent.putExtra("goal", count)
-            if (id == 2 || id == 4 || id == 6) {
+            if (id == 2 || id == 4 || id == 6 || id == 9 || id == 11) {
                 var switch = 0
                 if(switchMedium.isChecked) switch = 1
                 id += switch

@@ -18,6 +18,7 @@ import com.jm.schoolproject.R
 import com.jm.schoolproject.UserData
 import com.jm.schoolproject.server.Record
 import com.jm.schoolproject.server.Schedule
+import kotlinx.android.synthetic.main.fragment_home.*
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.util.*
@@ -25,7 +26,6 @@ import java.util.*
 class HomeMenuFragment : Fragment(), HomeCalendarAdapter.OnItemListener {
     private lateinit var monthYearText: TextView
     private lateinit var calendarRecyclerView: RecyclerView
-    private lateinit var dateTV: TextView
     private lateinit var previousBtn: Button
     private lateinit var nextBtn: Button
     private lateinit var homeTitle : TextView
@@ -56,7 +56,6 @@ class HomeMenuFragment : Fragment(), HomeCalendarAdapter.OnItemListener {
 
             calendarRecyclerView = findViewById(R.id.calendarRecyclerView)
             monthYearText = findViewById(R.id.monthYearTV)
-            dateTV = findViewById<TextView>(R.id.dateTV)
             previousBtn = findViewById(R.id.previousBtn)
             nextBtn = findViewById(R.id.nextBtn)
             homeTitle = findViewById(R.id.homeTitle)
@@ -118,17 +117,26 @@ class HomeMenuFragment : Fragment(), HomeCalendarAdapter.OnItemListener {
 
     fun onUpdateTextView() {
         var date = HomeCalendarUtils.selectedDate.toString()
-        var text = date + "\n\n"
-        text += "-- 스케줄 --\n"
+        var text = ""
 
         for (schedule in schedules) {
             if (schedule.date == date) {
                 text += "${schedule.exercise_name} ${schedule.exercise_set}세트\n"
             }
         }
-        text += "\n-- 운동 --\n"
+
+        if (text.isEmpty()) {
+            scheduleTitle.visibility = View.GONE
+            scheduleContent.visibility = View.GONE
+        }
+        else {
+            scheduleTitle.visibility = View.VISIBLE
+            scheduleContent.visibility = View.VISIBLE
+        }
+        scheduleContent.text = text
 
         var map = HashMap<String, Int>()
+        text = ""
 
         for (record in records) {
             if (record.date.split("/")[0] == date) {
@@ -140,9 +148,18 @@ class HomeMenuFragment : Fragment(), HomeCalendarAdapter.OnItemListener {
             }
         }
 
+        if (map.keys.size == 0) {
+            exerciseTitle.visibility = View.GONE
+            exerciseContent.visibility = View.GONE
+        }
+        else {
+            exerciseTitle.visibility = View.VISIBLE
+            exerciseContent.visibility = View.VISIBLE
+        }
+
         for (m in map.keys) {
             text += "${m} ${map[m]}세트\n"
         }
-        dateTV.text = text
+        exerciseContent.text = text
     }
 }

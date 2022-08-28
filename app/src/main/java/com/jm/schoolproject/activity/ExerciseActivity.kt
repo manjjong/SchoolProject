@@ -46,6 +46,13 @@ class ExerciseActivity : AppCompatActivity() {
         else if(id == 5) poseMatcher = RightDumbbellCurlPoseMatcher()
         else if(id == 6) poseMatcher = LeftPushUpMatcher()
         else if(id == 7) poseMatcher = RightPushUpMatcher()
+        else if(id == 8) poseMatcher = BridgePoseMatcher()
+        else if(id == 9) poseMatcher = LeftSideSquatPoseMatcher()
+        else if(id == 10) poseMatcher = RightSideSquatPoseMatcher()
+        else if(id == 11) poseMatcher = LeftBenchDipsPoseMatcher()
+        else if(id == 12) poseMatcher = RightBenchDipsPoseMatcher()
+        else if(id == 13) poseMatcher = MountainClimberPoseMatcher()
+        else if(id == 14) poseMatcher = WideSquatPoseMatcher()
         initEvent()
         startCamera()
         textCount.visibility = TextView.VISIBLE
