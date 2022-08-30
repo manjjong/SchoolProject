@@ -122,8 +122,9 @@ abstract class SideSquatPoseMatcher : PoseMatcher() {
             val targetAngle = target.angle
 
             //Log.d("Squat", "angle : " + angle + ", target : " + targetAngle)
-            Log.d("CameraX", "OffSet Over : " + target.angle + "->" + angle + ", " + kotlin.math.abs(angle - targetAngle))
-
+            Log.d("CameraX", "OffSet Over : " + target.angle + "->" + angle + ", " +
+                    "${translate(firstLandmark.landmarkType)} - ${translate(middleLandmark.landmarkType)} -" +
+                    "${translate(lastLandmark.landmarkType)}")
             val gap = angle - targetAngle
 
             if (gap > offset + 20) return null
@@ -154,7 +155,9 @@ abstract class SideSquatPoseMatcher : PoseMatcher() {
             val targetAngle = target.angle
 
             //Log.d("Squat", "angle : " + angle + ", target : " + targetAngle)
-            Log.d("CameraX", "OffSet Over : " + target.angle + "->" + angle + ", " + kotlin.math.abs(angle - targetAngle))
+            Log.d("CameraX", "OffSet Over : " + target.angle + "->" + angle + ", " +
+                    "${translate(firstLandmark.landmarkType)} - ${translate(middleLandmark.landmarkType)} -" +
+                    "${translate(lastLandmark.landmarkType)}")
 
             if (kotlin.math.abs(angle - targetAngle) > offset + 10) {
                 return -1.0

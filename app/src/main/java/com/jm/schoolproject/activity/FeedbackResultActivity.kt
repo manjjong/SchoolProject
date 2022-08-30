@@ -28,10 +28,10 @@ return JSONObject(data)
 
 class FeedbackResultActivity : AppCompatActivity() {
     private var line = arrayOf(Line(20, 16), Line(16, 14), Line(14, 12),
-    Line(12, 11), Line(11, 23), Line(23, 24), Line(24, 12),
-    Line(24, 26), Line(26, 28), Line(28, 32), Line(32, 30), Line(28, 30),
-    Line(23, 25), Line(25, 27), Line(27, 29), Line(29, 31), Line(27, 31),
-    Line(11, 13), Line(13, 15), Line(15, 21), Line(15, 19))
+        Line(12, 11), Line(11, 23), Line(23, 24), Line(24, 12),
+        Line(24, 26), Line(26, 28), Line(28, 32), Line(32, 30), Line(28, 30),
+        Line(23, 25), Line(25, 27), Line(27, 29), Line(29, 31), Line(27, 31),
+        Line(11, 13), Line(13, 15), Line(15, 21), Line(15, 19))
     private lateinit var feedbackPose : FeedbackPose
     private lateinit var originalPose : FeedbackPose
     private lateinit var imageView: ImageView
@@ -86,7 +86,7 @@ class FeedbackResultActivity : AppCompatActivity() {
                 Log.d("test", "l.start : " + l.start + ", l.end : " + l.end)
                 if ((l.start == target.start && l.end == target.end) ||
                     (l.start == target.end && l.end == target.start)) {
-                        Log.d("test", "들어옴")
+                    Log.d("test", "들어옴")
                     paint.color = Color.RED
                     break
                 }

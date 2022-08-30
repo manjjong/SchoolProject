@@ -13,10 +13,10 @@ import com.jm.schoolproject.mlkit.TargetShape
 class BridgePoseMatcher : PoseMatcher() {
     override fun initTargetPose() {
         targetPose = TargetPose(listOf(
-            TargetShape(PoseLandmark.LEFT_SHOULDER, PoseLandmark.LEFT_HIP, PoseLandmark.LEFT_KNEE, 175.0, "엉덩이를 낮춰주세요.", "엉덩이를 좀 더 올려주세요."),
-            TargetShape(PoseLandmark.LEFT_HIP, PoseLandmark.LEFT_KNEE, PoseLandmark.LEFT_ANKLE, 175.0, "발 위치를 좀 더 안쪽으로 옮겨주세요.", "발 위치를 좀 더 바깥쪽으로 옮겨주세요."),
-            TargetShape(PoseLandmark.RIGHT_SHOULDER, PoseLandmark.RIGHT_HIP, PoseLandmark.RIGHT_KNEE, 180.0, "엉덩이를 낮춰주세요.", "엉덩이를 좀 더 올려주세요."),
-            TargetShape(PoseLandmark.RIGHT_HIP, PoseLandmark.RIGHT_KNEE, PoseLandmark.RIGHT_ANKLE, 85.0, "발 위치를 좀 더 안쪽으로 옮겨주세요.", "발 위치를 좀 더 바깥쪽으로 옮겨주세요."),
+            TargetShape(PoseLandmark.LEFT_SHOULDER, PoseLandmark.LEFT_HIP, PoseLandmark.LEFT_KNEE, 165.0, "기준에 비해 배를 더 내밀었습니다. 배를 평평하게 펴주세요.", "기준에 비해 배를 덜 내미셨습니다. 배를 평평하게 펴주세요."),
+            TargetShape(PoseLandmark.LEFT_HIP, PoseLandmark.LEFT_KNEE, PoseLandmark.LEFT_ANKLE, 80.0, "기준에 비해 무릎이 더 펴져있습니다. 무릎을 좀 더 구부려주세요.", "기준에 비해 무릎이 더 구부려져있습니다. 무릎을 좀 더 펴주세요."),
+            TargetShape(PoseLandmark.RIGHT_SHOULDER, PoseLandmark.RIGHT_HIP, PoseLandmark.RIGHT_KNEE, 165.0, "기준에 비해 배를 더 내밀었습니다. 배를 평평하게 펴주세요.", "기준에 비해 배를 덜 내미셨습니다. 배를 평평하게 펴주세요."),
+            TargetShape(PoseLandmark.RIGHT_HIP, PoseLandmark.RIGHT_KNEE, PoseLandmark.RIGHT_ANKLE, 80.0, "기준에 비해 무릎이 더 펴져있습니다. 무릎을 좀 더 구부려주세요.", "기준에 비해 무릎이 더 구부려져있습니다. 무릎을 좀 더 펴주세요."),
         ))
     }
     override fun initCountPose() {
@@ -51,8 +51,8 @@ class BridgePoseMatcher : PoseMatcher() {
         else {
             if(pose.allPoseLandmarks.isNotEmpty()) {
                 //Log.d("Squat", "allPoseLandmark : " + allPoseLandmark[24].position3D.y + ", pose : " + pose.allPoseLandmarks[24].position3D.y)
-                if (allPoseLandmark[24].position.y < pose.allPoseLandmarks[24].position.y ||
-                    allPoseLandmark[23].position.y < pose.allPoseLandmarks[23].position.y) {
+                if (allPoseLandmark[24].position.y > pose.allPoseLandmarks[24].position.y ||
+                    allPoseLandmark[23].position.y > pose.allPoseLandmarks[23].position.y) {
                     allPoseLandmark.clear()
                     allPoseLandmark.addAll(pose.allPoseLandmarks)
                     Log.d("Test", "엉덩이 높이 : " + allPoseLandmark[23].position.y + ", " + allPoseLandmark[24].position.y)
@@ -88,8 +88,8 @@ class BridgePoseMatcher : PoseMatcher() {
         }
         else {
             if (pose.allPoseLandmarks.isNotEmpty()) {
-                if (allPoseLandmark[24].position.y < pose.allPoseLandmarks[24].position.y ||
-                    allPoseLandmark[23].position.y < pose.allPoseLandmarks[23].position.y) {
+                if (allPoseLandmark[24].position.y > pose.allPoseLandmarks[24].position.y ||
+                    allPoseLandmark[23].position.y > pose.allPoseLandmarks[23].position.y) {
                     allPoseLandmark.clear()
                     allPoseLandmark.addAll(pose.allPoseLandmarks)
                     this.bitmap = bitmap
@@ -159,7 +159,9 @@ class BridgePoseMatcher : PoseMatcher() {
             val targetAngle = target.angle
 
             //Log.d("Squat", "angle : " + angle + ", target : " + targetAngle)
-            Log.d("CameraX", "OffSet Over : " + target.angle + "->" + angle + ", " + kotlin.math.abs(angle - targetAngle))
+            Log.d("CameraX", "OffSet Over : " + target.angle + "->" + angle + ", " +
+                    "${translate(firstLandmark.landmarkType)} - ${translate(middleLandmark.landmarkType)} -" +
+                    "${translate(lastLandmark.landmarkType)}")
 
             if (kotlin.math.abs(angle - targetAngle) > offset + 10) {
                 return -1.0
