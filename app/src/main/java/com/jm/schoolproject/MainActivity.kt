@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.core.view.GravityCompat
@@ -105,13 +106,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateLoginMenu() {
         if(navigationView == null) return
+        var headerView = navigationView.getHeaderView(0)
+        var text = headerView.findViewById<TextView>(R.id.profile_id)
+
         if(UserData.getInstance().state == UserData.LOGIN_STATE) {
             navigationView.menu.getItem(2).isVisible = false
             navigationView.menu.getItem(3).isVisible = true
+            text.text = "${UserData.getInstance().user_name}"
         }
         else {
             navigationView.menu.getItem(2).isVisible = true
             navigationView.menu.getItem(3).isVisible = false
+            text.text = "로그인을 먼저 해주세요."
         }
     }
 

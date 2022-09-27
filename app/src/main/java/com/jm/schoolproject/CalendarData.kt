@@ -7,14 +7,13 @@ class CalendarData {
     var records = ArrayList<Record>()
 
     fun get(callback : (ArrayList<Schedule>?, ArrayList<Record>?) -> Unit) {
-        schedules.clear()
-        records.clear()
-
         CalendarDB.get(UserData.getInstance().user_id) {
             if (it == null) {
                 callback(null, null)
                 return@get
             }
+            schedules.clear()
+            records.clear()
             schedules.addAll(it!!.schedule)
             records.addAll(it!!.record)
             callback(schedules, records)

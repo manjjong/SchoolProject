@@ -13,17 +13,17 @@ import com.jm.schoolproject.mlkit.TargetShape
 class WideSquatPoseMatcher : PoseMatcher() {
     override fun initTargetPose() {
         targetPose = TargetPose(listOf(
-            TargetShape(PoseLandmark.LEFT_HIP, PoseLandmark.LEFT_KNEE, PoseLandmark.LEFT_ANKLE, 90.0, "허리를 좀더 숙여주세요.",    "허리를 좀더 펴주세요."),
-            TargetShape(PoseLandmark.LEFT_SHOULDER, PoseLandmark.LEFT_HIP, PoseLandmark.LEFT_KNEE, 95.0, "허리를 좀더 숙여주세요.", "허리를 좀더 펴주세요."),
-            TargetShape(PoseLandmark.RIGHT_HIP, PoseLandmark.RIGHT_KNEE, PoseLandmark.RIGHT_ANKLE, 90.0, "오른쪽 무릎을 좀더 구부려주세요.", "오른쪽 무릎을 좀더 펴주세요."),
-            TargetShape(PoseLandmark.RIGHT_SHOULDER, PoseLandmark.RIGHT_HIP, PoseLandmark.RIGHT_ANKLE, 95.0, "왼쪽 무릎을 좀더 구부려주세요.", "왼쪽 무릎을 좀더 펴주세요."),
+            TargetShape(PoseLandmark.LEFT_HIP, PoseLandmark.LEFT_KNEE, PoseLandmark.LEFT_ANKLE, 90.0, "오른쪽 무릎을 좀더 굽혀주세요.",    "오른쪽 무릎을 좀 더 펴주세요."),
+            TargetShape(PoseLandmark.LEFT_SHOULDER, PoseLandmark.LEFT_HIP, PoseLandmark.LEFT_KNEE, 95.0, "좀 더 앉아주세요.",    "조금 덜 앉아주세요."),
+            TargetShape(PoseLandmark.RIGHT_HIP, PoseLandmark.RIGHT_KNEE, PoseLandmark.RIGHT_ANKLE, 90.0, "왼쪽 무릎을 좀더 굽혀주세요.",    "왼쪽 무릎을 좀 더 펴주세요."),
+            TargetShape(PoseLandmark.RIGHT_SHOULDER, PoseLandmark.RIGHT_HIP, PoseLandmark.RIGHT_KNEE, 95.0, "좀 더 앉아주세요.",    "조금 덜 앉아주세요."),
         ))
     }
     override fun initCountPose() {
         countPose = TargetPose(listOf(
-            TargetShape(PoseLandmark.LEFT_SHOULDER, PoseLandmark.LEFT_HIP, PoseLandmark.LEFT_KNEE, 170.0, "b", "s"),
+            TargetShape(PoseLandmark.LEFT_SHOULDER, PoseLandmark.LEFT_HIP, PoseLandmark.LEFT_KNEE, 160.0, "b", "s"),
             TargetShape(PoseLandmark.LEFT_HIP, PoseLandmark.LEFT_KNEE, PoseLandmark.LEFT_ANKLE, 170.0, "b", "s"),
-            TargetShape(PoseLandmark.RIGHT_SHOULDER, PoseLandmark.RIGHT_HIP, PoseLandmark.RIGHT_KNEE, 170.0, "b", "s"),
+            TargetShape(PoseLandmark.RIGHT_SHOULDER, PoseLandmark.RIGHT_HIP, PoseLandmark.RIGHT_KNEE, 160.0, "b", "s"),
             TargetShape(PoseLandmark.RIGHT_HIP, PoseLandmark.RIGHT_KNEE, PoseLandmark.RIGHT_ANKLE, 170.0, "b", "s"),
         ))
     }
@@ -127,7 +127,9 @@ class WideSquatPoseMatcher : PoseMatcher() {
             val targetAngle = target.angle
 
             //Log.d("Squat", "angle : " + angle + ", target : " + targetAngle)
-            Log.d("CameraX", "OffSet Over : " + target.angle + "->" + angle + ", " + kotlin.math.abs(angle - targetAngle))
+            Log.d("CameraX", "OffSet Over : " + target.angle + "->" + angle + ", " +
+                    "${translate(firstLandmark.landmarkType)} - ${translate(middleLandmark.landmarkType)} -" +
+                    "${translate(lastLandmark.landmarkType)}")
 
             val gap = angle - targetAngle
 
@@ -159,7 +161,9 @@ class WideSquatPoseMatcher : PoseMatcher() {
             val targetAngle = target.angle
 
             //Log.d("Squat", "angle : " + angle + ", target : " + targetAngle)
-            Log.d("CameraX", "OffSet Over : " + target.angle + "->" + angle + ", " + kotlin.math.abs(angle - targetAngle))
+            Log.d("CameraX", "OffSet Over : " + target.angle + "->" + angle + ", " +
+                    "${translate(firstLandmark.landmarkType)} - ${translate(middleLandmark.landmarkType)} -" +
+                    "${translate(lastLandmark.landmarkType)}")
 
             if (kotlin.math.abs(angle - targetAngle) > offset + 10) {
                 return -1.0

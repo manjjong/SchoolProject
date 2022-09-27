@@ -21,7 +21,7 @@ abstract class BenchDipsPoseMatcher : PoseMatcher() {
     }
     override fun initCountPose() {
         countPose = TargetPose(listOf(
-            TargetShape(PoseLandmark.RIGHT_SHOULDER, PoseLandmark.RIGHT_ELBOW, PoseLandmark.RIGHT_ANKLE, 160.0, "", ""),
+            TargetShape(PoseLandmark.RIGHT_SHOULDER, PoseLandmark.RIGHT_ELBOW, PoseLandmark.RIGHT_WRIST, 160.0, "", ""),
             TargetShape(PoseLandmark.LEFT_SHOULDER, PoseLandmark.LEFT_ELBOW, PoseLandmark.LEFT_ANKLE, 160.0, "", ""),
             TargetShape(PoseLandmark.RIGHT_HIP, PoseLandmark.RIGHT_SHOULDER, PoseLandmark.RIGHT_ELBOW, 60.0, "", ""),
             TargetShape(PoseLandmark.LEFT_HIP, PoseLandmark.LEFT_SHOULDER, PoseLandmark.LEFT_ELBOW, 60.0, "", ""),

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -50,6 +51,7 @@ class FeedbackActivity : AppCompatActivity() {
         else if(id == 12) poseMatcher = RightBenchDipsPoseMatcher()
         else if(id == 13) poseMatcher = MountainClimberPoseMatcher()
         else if(id == 14) poseMatcher = WideSquatPoseMatcher()
+        Log.d("test", "id : $id")
         initEvent()
         startCamera()
         textCount.visibility = TextView.VISIBLE

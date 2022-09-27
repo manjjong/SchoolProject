@@ -52,13 +52,16 @@
         <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/activity_exercise.xml" value="0.20652173913043478" />
         <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/activity_feedback_result.xml" value="0.47604166666666664" />
         <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/activity_main.xml" value="0.25329280648429586" />
-        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/fragment_calendar.xml" value="0.5652173913043478" />
+        <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/fragment_calendar.xml" value="0.33" />
         <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/fragment_exercise.xml" value="0.23324275362318841" />
         <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/fragment_exercise_listview.xml" value="0.23324275362318841" />
         <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/fragment_exercise_setting.xml" value="0.23324275362318841" />
         <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/fragment_goal.xml" value="0.5652173913043478" />
         <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/AndroidStudio/SchoolProject/app/src/main/res/layout/home_calendarcell.xml" value="0.3759057971014493" />
+        <entry key="..\:/Users/mkon/Desktop/ProjectDir/SchoolProject/app/src/main/res/layout/activity_main.xml" value="0.375" />
+        <entry key="..\:/Users/mkon/Desktop/ProjectDir/SchoolProject/app/src/main/res/layout/fragment_calendar.xml" value="0.375" />
+        <entry key="..\:/Users/mkon/Desktop/ProjectDir/SchoolProject/app/src/main/res/layout/header.xml" value="0.375" />
       </map>
     </option>
   </component>

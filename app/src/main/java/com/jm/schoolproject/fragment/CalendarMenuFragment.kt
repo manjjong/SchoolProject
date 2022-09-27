@@ -25,6 +25,7 @@ import com.jm.schoolproject.server.Schedule
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.CalendarMode
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
+import kotlinx.android.synthetic.main.fragment_calendar.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.Executors
@@ -77,28 +78,51 @@ class CalendarMenuFragment : Fragment() {
                 val month: Int = date.month + 1
                 val day: Int = date.day
 
-                Log.i("Year test", year.toString() + "")
-                Log.i("Month test", month.toString() + "")
-                Log.i("Day test", day.toString() + "")
+                var day_of_week = date.calendar.get(Calendar.DAY_OF_WEEK)
+                var day_of_week_txt = "$day."
+                var day_of_week_color = "#000000"
 
-                val shotDay = "$year,$month,$day"
+                when (day_of_week) {
+                    Calendar.MONDAY -> day_of_week_txt += "월"
+                    Calendar.TUESDAY -> day_of_week_txt += "화"
+                    Calendar.WEDNESDAY -> day_of_week_txt += "수"
+                    Calendar.THURSDAY -> day_of_week_txt += "목"
+                    Calendar.FRIDAY -> day_of_week_txt += "금"
+                    Calendar.SATURDAY -> {
+                        day_of_week_color = "#FF6200EE"
+                        day_of_week_txt += "토"
+                    }
+                    Calendar.SUNDAY -> {
+                        day_of_week_color = "#E91E1E"
+                        day_of_week_txt += "일"
+                    }
+                }
 
-                Log.i("shot_Day test", shotDay + "")
+                calendar_date.text = day_of_week_txt
+                calendar_date.setTextColor(Color.parseColor(day_of_week_color))
                 materialCalendarView.clearSelection()
 
-                val calendarTV : TextView = findViewById(R.id.calendarTV)
-                var text = "$year 년 $month 월 $day 일\n"
+                var empty = true
+                var text = ""
                 val calendar = Calendar.getInstance()
                 calendar.set(year, month-1, day)
                 var date = sdf.format(calendar.time)
-                text += "== 스케줄 ==\n"
 
                 for (schedule in schedules) {
                     if (schedule.date == date) {
                         text += "${schedule.exercise_name} ${schedule.exercise_set}세트\n"
                     }
                 }
-                text += "\n== 운동 ==\n"
+                if (text.isBlank()) {
+                    calendar_schedule_title.visibility = View.GONE
+                    calendar_shedule_content.visibility = View.GONE
+                }
+                else {
+                    calendar_schedule_title.visibility = View.VISIBLE
+                    calendar_shedule_content.visibility = View.VISIBLE
+                    calendar_shedule_content.text = text
+                    empty = false
+                }
 
                 var map = HashMap<String, Int>()
 
@@ -112,10 +136,24 @@ class CalendarMenuFragment : Fragment() {
                     }
                 }
 
+                text = ""
                 for (m in map.keys) {
                     text += "${m} ${map[m]}세트\n"
                 }
-                calendarTV.text = text
+
+                if (map.keys.size == 0) {
+                    calendar_exercise_title.visibility = View.GONE
+                    calendar_exercise_content.visibility = View.GONE
+                }
+                else {
+                    calendar_exercise_title.visibility = View.VISIBLE
+                    calendar_exercise_content.visibility = View.VISIBLE
+                    calendar_exercise_content.text = text
+                    empty = false
+                }
+
+                if (empty) calendar_no_content.visibility = View.VISIBLE
+                else calendar_no_content.visibility = View.GONE
             }
         }
     }
